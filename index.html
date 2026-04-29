@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Decisión Legal - firma jurídica con enfoque estratégico, humano y claro." />
+  <title>Decisión Legal | Firma Jurídica</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #ffffff;
+      --text: #191919;
+      --muted: #66635c;
+      --line: rgba(25, 25, 25, 0.14);
+      --accent: #8b6f47;
+      --accent-2: #194f5a;
+      --nav: rgba(246, 244, 239, 0.82);
+      --shadow: 0 22px 70px rgba(25, 25, 25, 0.09);
+      --radius: 6px;
+      color-scheme: light;
+    }
+
+    body.dark {
+      --bg: #121312;
+      --panel: #1c1d1b;
+      --text: #f2efe7;
+      --muted: #b8b0a3;
+      --line: rgba(242, 239, 231, 0.16);
+      --accent: #cfb079;
+      --accent-2: #79b4bf;
+      --nav: rgba(18, 19, 18, 0.84);
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0;
+      transition: background-color 420ms ease, color 420ms ease;
+    }
+
+    body::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      min-height: 74px;
+      border-bottom: 1px solid var(--line);
+      background: var(--nav);
+      backdrop-filter: blur(18px);
+      transition: background-color 420ms ease, border-color 420ms ease;
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 74px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-grid;
+      gap: 0;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    .brand strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: color 420ms ease;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(10px, 2vw, 24px);
+      color: var(--muted);
+      font-size: 0.83rem;
+      scrollbar-width: none;
+      transition: color 420ms ease;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 260ms ease, background-color 420ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .theme-toggle {
+      width: 46px;
+      height: 28px;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 420ms ease, background-color 420ms ease;
+      flex: 0 0 auto;
+    }
+
+    .toggle-track {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+    }
+
+    .toggle-dot {
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--text);
+      color: var(--bg);
+      transform: translateX(0);
+      transition: transform 320ms ease, background-color 420ms ease, color 420ms ease;
+    }
+
+    body.dark .toggle-dot {
+      transform: translateX(16px);
+    }
+
+    .toggle-dot svg {
+      width: 12px;
+      height: 12px;
+      stroke-width: 1.8;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      scroll-margin-top: 94px;
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(72px, 9vw, 120px) 0;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 420ms ease;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+      transition: background-color 420ms ease;
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin: 0 0 28px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 5vw, 4.4rem);
+      font-weight: 400;
+      line-height: 0.98;
+    }
+
+    .section-copy {
+      max-width: 690px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+      transition: color 420ms ease;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      padding-top: 110px;
+      border-bottom: 1px solid var(--line);
+      transition: border-color 420ms ease;
+    }
+
+    .hero-grid {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: clamp(34px, 6vw, 78px);
+      align-items: end;
+      padding: 64px 0 clamp(40px, 8vw, 88px);
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 780px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.3rem, 10vw, 8.5rem);
+      font-weight: 400;
+      line-height: 0.88;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      margin: 34px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      transition: color 420ms ease;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--text);
+      border-radius: 999px;
+      background: var(--text);
+      color: var(--bg);
+      font-size: 0.9rem;
+      transition: background-color 280ms ease, color 280ms ease, border-color 420ms ease, transform 280ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-visual {
+      min-height: 540px;
+      position: relative;
+      border-left: 1px solid var(--line);
+      transition: border-color 420ms ease;
+    }
+
+    .legal-image {
+      width: min(100%, 520px);
+      aspect-ratio: 4 / 5;
+      margin-left: auto;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(25, 79, 90, 0.34), rgba(139, 111, 71, 0.18)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 900'%3E%3Crect width='720' height='900' fill='%23d7d0c4'/%3E%3Cpath d='M84 0h116v900H84zM306 0h76v900h-76zM516 0h120v900H516z' fill='%23eee9df' opacity='.5'/%3E%3Cpath d='M0 630h720v270H0z' fill='%23272b2a' opacity='.78'/%3E%3Cpath d='M118 632h498' stroke='%23f5efe4' stroke-width='5' opacity='.65'/%3E%3Cpath d='M360 174v378M250 260h220M286 260l-84 196h168L286 260Zm148 0-84 196h168L434 260Z' fill='none' stroke='%23252725' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' opacity='.76'/%3E%3Ccircle cx='360' cy='166' r='18' fill='%23252725' opacity='.76'/%3E%3Cpath d='M214 704h292v26H214zM170 746h380v30H170z' fill='%23f5efe4' opacity='.82'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+      transition: box-shadow 420ms ease, filter 420ms ease;
+    }
+
+    body.dark .legal-image {
+      filter: brightness(0.82) contrast(1.08);
+    }
+
+    .hero-stat {
+      position: absolute;
+      left: clamp(18px, 4vw, 48px);
+      bottom: 42px;
+      width: min(280px, 78%);
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(18px);
+      transition: background-color 420ms ease, border-color 420ms ease;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.9rem;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .hero-stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      transition: color 420ms ease;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+      gap: clamp(34px, 8vw, 100px);
+      align-items: start;
+    }
+
+    .about-note {
+      position: sticky;
+      top: 112px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: border-color 420ms ease, color 420ms ease;
+    }
+
+    .about-text {
+      display: grid;
+      gap: 28px;
+    }
+
+    .about-text p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.16rem, 2.7vw, 1.8rem);
+      line-height: 1.34;
+      transition: color 420ms ease;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 28px;
+      background: var(--line);
+      transition: background-color 420ms ease;
+    }
+
+    .value {
+      min-height: 124px;
+      padding: 22px;
+      background: var(--bg);
+      transition: background-color 420ms ease;
+    }
+
+    .value strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .value span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 420ms ease;
+    }
+
+    .feature-grid,
+    .practice-grid,
+    .attorney-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 44px;
+    }
+
+    .feature-card,
+    .practice-card,
+    .attorney-card {
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 82%, transparent);
+      transition: background-color 420ms ease, border-color 420ms ease, transform 280ms ease, box-shadow 280ms ease;
+    }
+
+    .feature-card:hover,
+    .practice-card:hover,
+    .attorney-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card {
+      min-height: 250px;
+      padding: 26px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--accent-2);
+      transition: border-color 420ms ease, color 420ms ease;
+    }
+
+    .icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feature-card h3,
+    .practice-card h3,
+    .attorney-card h3 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.42rem;
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    .feature-card p,
+    .practice-card p,
+    .attorney-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 420ms ease;
+    }
+
+    .practice-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 44px;
+      border-top: 1px solid var(--line);
+      transition: border-color 420ms ease;
+    }
+
+    .practice-card {
+      min-height: 220px;
+      padding: 30px;
+      display: grid;
+      gap: 30px;
+      align-content: space-between;
+    }
+
+    .practice-card .number {
+      color: var(--accent);
+      font-size: 0.82rem;
+      transition: color 420ms ease;
+    }
+
+    .attorney-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 44px;
+    }
+
+    .attorney-card {
+      overflow: hidden;
+    }
+
+    .portrait {
+      aspect-ratio: 4 / 5;
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--line);
+      transition: border-color 420ms ease, filter 420ms ease;
+    }
+
+    body.dark .portrait {
+      filter: brightness(0.84) contrast(1.04);
+    }
+
+    .portrait.one {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 650'%3E%3Crect width='520' height='650' fill='%23d8d4cc'/%3E%3Cpath d='M0 0h520v650H0z' fill='%23e8e1d6'/%3E%3Cpath d='M82 0h58v650H82zM338 0h96v650h-96z' fill='%23f5f0e8' opacity='.7'/%3E%3Ccircle cx='260' cy='196' r='70' fill='%23917e69'/%3E%3Cpath d='M148 650V440c0-74 50-128 112-128s112 54 112 128v210H148z' fill='%23292c2b'/%3E%3Cpath d='M216 332h88l-44 82-44-82z' fill='%23f5f0e8'/%3E%3C/svg%3E");
+    }
+
+    .portrait.two {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 650'%3E%3Crect width='520' height='650' fill='%23d5d9d7'/%3E%3Cpath d='M0 0h520v650H0z' fill='%23e4e8e5'/%3E%3Cpath d='M54 0h112v650H54zM404 0h54v650h-54z' fill='%23f3f1ea' opacity='.74'/%3E%3Ccircle cx='260' cy='184' r='72' fill='%23876f59'/%3E%3Cpath d='M136 650V434c0-76 54-132 124-132s124 56 124 132v216H136z' fill='%231e4c55'/%3E%3Cpath d='M210 328h100l-50 86-50-86z' fill='%23f3f1ea'/%3E%3C/svg%3E");
+    }
+
+    .portrait.three {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 650'%3E%3Crect width='520' height='650' fill='%23d6d0c4'/%3E%3Cpath d='M0 0h520v650H0z' fill='%23e9e3d8'/%3E%3Cpath d='M0 456h520v194H0z' fill='%23c8bfaf' opacity='.66'/%3E%3Cpath d='M116 0h66v650h-66zM344 0h84v650h-84z' fill='%23f6f1e9' opacity='.72'/%3E%3Ccircle cx='260' cy='190' r='68' fill='%23856f5f'/%3E%3Cpath d='M142 650V436c0-74 52-126 118-126s118 52 118 126v214H142z' fill='%23252525'/%3E%3Cpath d='M216 330h88l-44 78-44-78z' fill='%23f6f1e9'/%3E%3C/svg%3E");
+    }
+
+    .attorney-card .content {
+      padding: 24px;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      transition: color 420ms ease;
+    }
+
+    .contact-band {
+      border-top: 1px solid var(--line);
+      transition: border-color 420ms ease;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+      gap: clamp(34px, 8vw, 100px);
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 34px;
+      color: var(--muted);
+      transition: color 420ms ease;
+    }
+
+    .contact-list a {
+      display: inline-flex;
+      width: fit-content;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 4px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      transition: background-color 420ms ease, border-color 420ms ease;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      transition: color 420ms ease;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--bg);
+      color: var(--text);
+      padding: 14px 13px;
+      outline: none;
+      transition: background-color 420ms ease, border-color 280ms ease, color 420ms ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+    }
+
+    textarea {
+      min-height: 144px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 28px 0 38px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      transition: border-color 420ms ease, color 420ms ease;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-inner {
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 132px;
+      }
+
+      .hero-visual {
+        min-height: auto;
+        border-left: 0;
+      }
+
+      .legal-image {
+        margin-left: 0;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+      }
+
+      .hero-stat {
+        left: 22px;
+        bottom: 22px;
+      }
+
+      .about-note {
+        position: static;
+      }
+
+      .feature-grid,
+      .attorney-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .site-nav {
+        min-height: 70px;
+      }
+
+      .nav-links {
+        gap: 18px;
+        font-size: 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.15rem, 18vw, 5.4rem);
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .feature-grid,
+      .practice-grid,
+      .attorney-grid,
+      .values,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card,
+      .practice-card {
+        min-height: 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-nav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a class="brand" href="#inicio" aria-label="Decisión Legal, inicio">
+        <strong>Decisión Legal</strong>
+        <span>Firma jurídica</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#por-que">¿Por qué?</a>
+        <a href="#areas">Áreas</a>
+        <a href="#abogados">Abogados</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+        <span class="toggle-track" aria-hidden="true">
+          <span class="toggle-dot">
+            <svg class="sun-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"></path>
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-grid">
+        <div>
+          <span class="section-kicker">Estrategia jurídica clara</span>
+          <h1>Decisiones legales con criterio y precisión.</h1>
+          <p class="hero-copy">Acompañamos a personas, familias y empresas en asuntos complejos con análisis riguroso, comunicación directa y una visión práctica de cada resultado.</p>
+          <div class="cta-row">
+            <a class="button" href="#contacto">
+              Agendar consulta
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+              </svg>
+            </a>
+            <a class="button secondary" href="#areas">Ver áreas</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="legal-image"></div>
+          <div class="hero-stat">
+            <strong>18+</strong>
+            <span>años combinados representando intereses civiles, familiares, penales y corporativos.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nosotros">
+      <div class="about-grid">
+        <aside class="about-note">
+          Fundada en Ciudad de México, Decisión Legal combina experiencia de litigio, negociación y asesoría preventiva.
+        </aside>
+        <div class="about-text">
+          <span class="section-kicker">Nosotros</span>
+          <h2 class="section-title">Una firma cercana para asuntos que exigen calma, método y estrategia.</h2>
+          <p>Nacimos con una idea sencilla: que cada cliente entienda sus opciones antes de tomar una decisión. Nuestra misión es transformar la complejidad jurídica en rutas claras de acción, protegiendo patrimonio, relaciones y libertad con absoluto profesionalismo.</p>
+          <div class="values" aria-label="Valores de la firma">
+            <div class="value">
+              <strong>Claridad</strong>
+              <span>Lenguaje directo, expectativas reales y seguimiento continuo.</span>
+            </div>
+            <div class="value">
+              <strong>Discreción</strong>
+              <span>Manejo responsable de información sensible y decisiones privadas.</span>
+            </div>
+            <div class="value">
+              <strong>Firmeza</strong>
+              <span>Defensa estructurada, documentada y lista para negociar o litigar.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="por-que">
+      <span class="section-kicker">¿Por qué nosotros?</span>
+      <h2 class="section-title">Ventajas pensadas para tomar mejores decisiones desde el primer día.</h2>
+      <p class="section-copy">Trabajamos con equipos compactos, procesos visibles y criterios jurídicos ajustados a la realidad de cada cliente.</p>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5l8-3 8 3v14l-8 3-8-3Z"></path><path d="M12 6v12"></path><path d="m8 9 4-2 4 2"></path></svg>
+          </span>
+          <div>
+            <h3>Defensa estratégica</h3>
+            <p>Cada asunto inicia con diagnóstico de riesgos, rutas de acción y escenarios posibles.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 7a4 4 0 1 1 8 0"></path><path d="M5 11h14v9H5z"></path><path d="M12 15v2"></path></svg>
+          </span>
+          <div>
+            <h3>Confidencialidad</h3>
+            <p>Protocolos internos para proteger documentación, identidad y contexto sensible.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path><path d="m7 7 10 10"></path><path d="m17 7-10 10"></path></svg>
+          </span>
+          <div>
+            <h3>Atención integral</h3>
+            <p>Coordinamos litigio, negociación, contratos y prevención dentro de una misma visión.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 18h16"></path><path d="M7 18V8"></path><path d="M12 18V4"></path><path d="M17 18v-6"></path></svg>
+          </span>
+          <div>
+            <h3>Comunicación medible</h3>
+            <p>Reportes claros, fechas clave y próximos pasos definidos durante todo el proceso.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="areas">
+      <span class="section-kicker">Nuestras áreas</span>
+      <h2 class="section-title">Especialidades jurídicas para etapas críticas y decisiones cotidianas.</h2>
+
+      <div class="practice-grid">
+        <article class="practice-card">
+          <span class="number">01</span>
+          <div>
+            <h3>Derecho Corporativo</h3>
+            <p>Constitución de sociedades, contratos, gobierno corporativo, cumplimiento y prevención de conflictos empresariales.</p>
+          </div>
+        </article>
+
+        <article class="practice-card">
+          <span class="number">02</span>
+          <div>
+            <h3>Derecho Familiar</h3>
+            <p>Divorcios, custodia, pensiones, convenios y protección de intereses familiares con sensibilidad y firmeza.</p>
+          </div>
+        </article>
+
+        <article class="practice-card">
+          <span class="number">03</span>
+          <div>
+            <h3>Derecho Penal</h3>
+            <p>Defensa, representación de víctimas, estrategia de investigación y acompañamiento en audiencias.</p>
+          </div>
+        </article>
+
+        <article class="practice-card">
+          <span class="number">04</span>
+          <div>
+            <h3>Derecho Civil</h3>
+            <p>Contratos, arrendamientos, responsabilidad civil, juicios ordinarios y recuperación de obligaciones.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="abogados">
+      <span class="section-kicker">Abogados</span>
+      <h2 class="section-title">Un equipo senior, accesible y enfocado en resultados verificables.</h2>
+      <p class="section-copy">Perfiles de referencia para mostrar la estructura del equipo y las áreas de atención principales.</p>
+
+      <div class="attorney-grid">
+        <article class="attorney-card">
+          <div class="portrait one" role="img" aria-label="Retrato placeholder de abogada"></div>
+          <div class="content">
+            <h3>Mariana Robles</h3>
+            <p>Socia directora especializada en litigio civil, familiar y estrategia de negociación.</p>
+            <span class="tag">Civil · Familiar</span>
+          </div>
+        </article>
+
+        <article class="attorney-card">
+          <div class="portrait two" role="img" aria-label="Retrato placeholder de abogado"></div>
+          <div class="content">
+            <h3>Emilio Vargas</h3>
+            <p>Abogado penalista con experiencia en defensa, asesoría a víctimas y audiencias orales.</p>
+            <span class="tag">Penal</span>
+          </div>
+        </article>
+
+        <article class="attorney-card">
+          <div class="portrait three" role="img" aria-label="Retrato placeholder de abogada"></div>
+          <div class="content">
+            <h3>Lucía Serrano</h3>
+            <p>Especialista en asesoría corporativa, contratos, cumplimiento y operaciones empresariales.</p>
+            <span class="tag">Corporativo</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contacto">
+      <div class="section contact-grid">
+        <div>
+          <span class="section-kicker">Contacto</span>
+          <h2 class="section-title">Cuéntenos qué necesita resolver.</h2>
+          <p class="section-copy">Responderemos con una primera orientación y, si el asunto lo requiere, una propuesta de trabajo clara.</p>
+          <div class="contact-list">
+            <a href="mailto:contacto@decisionlegal.mx">contacto@decisionlegal.mx</a>
+            <a href="tel:+525555550190">+52 55 5555 0190</a>
+            <span>Río Lerma 167, Cuauhtémoc, Ciudad de México</span>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label>
+              Nombre
+              <input type="text" name="nombre" autocomplete="name" required />
+            </label>
+            <label>
+              Correo
+              <input type="email" name="correo" autocomplete="email" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Teléfono
+              <input type="tel" name="telefono" autocomplete="tel" />
+            </label>
+            <label>
+              Área legal
+              <input type="text" name="area" placeholder="Civil, penal, familiar..." />
+            </label>
+          </div>
+
+          <label>
+            Mensaje
+            <textarea name="mensaje" required></textarea>
+          </label>
+
+          <button class="button" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Decisión Legal. Todos los derechos reservados.</span>
+      <span>Asesoría jurídica con criterio, claridad y discreción.</span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".theme-toggle");
+    const body = document.body;
+    const storedTheme = localStorage.getItem("decision-legal-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+      body.classList.add("dark");
+      toggle.setAttribute("aria-pressed", "true");
+      toggle.setAttribute("aria-label", "Cambiar a modo claro");
+    }
+
+    toggle.addEventListener("click", () => {
+      const isDark = body.classList.toggle("dark");
+      localStorage.setItem("decision-legal-theme", isDark ? "dark" : "light");
+      toggle.setAttribute("aria-pressed", String(isDark));
+      toggle.setAttribute("aria-label", isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+    });
+
+    document.querySelector(".contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const button = event.currentTarget.querySelector("button");
+      const previous = button.textContent;
+      button.textContent = "Mensaje preparado";
+      setTimeout(() => {
+        button.textContent = previous;
+        event.currentTarget.reset();
+      }, 1400);
+    });
+  </script>
+</body>
+</html>
