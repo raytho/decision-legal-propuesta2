@@ -1,233 +1,187 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX" class="dark-theme">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decisión Legal | Tu tranquilidad patrimonial</title>
+  <title>Decisión Legal | Abogados inmobiliarios, corporativos y contractuales en CDMX</title>
   <meta name="description"
-    content="Decisión Legal resuelve necesidades inmobiliarias, corporativas y contractuales para proteger la tranquilidad patrimonial de sus clientes.">
+    content="Decisión Legal resuelve necesidades inmobiliarias, corporativas y contractuales para proteger la tranquilidad patrimonial de sus clientes. Despacho en Col. Hipódromo, CDMX.">
+
+  <!-- Confirmar el dominio definitivo antes de publicar: canonical, og:url y og:image deben apuntar a él. -->
+  <link rel="canonical" href="https://decisionlegal.com.mx/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f5f70">
+
+  <!-- Preview al compartir el enlace (WhatsApp, redes, correo) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Decisión Legal">
+  <meta property="og:url" content="https://decisionlegal.com.mx/">
+  <meta property="og:title" content="Decisión Legal | Tu tranquilidad patrimonial">
+  <meta property="og:description"
+    content="Resolvemos necesidades inmobiliarias, corporativas y contractuales con estrategias precisas y transparencia.">
+  <!-- La ruta absoluta se arma al publicar: og:image no acepta rutas relativas. -->
+  <meta property="og:image" content="https://decisionlegal.com.mx/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logotipo de Decisión Legal y Corporativa">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- SVG primero: los navegadores que no lo soportan caen a los PNG. -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --ink: #101828;
-      --muted: #667085;
-      --brand: #0f5f70;
-      --brand-dark: #083f4b;
-      --line: #d0d5dd;
-      --paper: #f7f8fa;
-      --gold: #b48a3c;
-      --whatsapp: #25d366;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Solo se precarga el AVIF: un navegador que lo soporta también acepta
+       JPEG, así que un segundo preload descargaría la imagen dos veces. -->
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesizes="100vw"
+    imagesrcset="assets/hero-800.avif 800w, assets/hero-1200.avif 1200w, assets/hero-1600.avif 1600w">
+  <link rel="stylesheet" href="styles/design-system.css">
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-    }
-
-    .text-brand {
-      color: var(--brand);
-    }
-
-    .bg-brand {
-      background-color: var(--brand);
-    }
-
-    .bg-brand-dark {
-      background-color: var(--brand-dark);
-    }
-
-    .border-brand {
-      border-color: var(--brand);
-    }
-
-    .shadow-business {
-      box-shadow: 0 24px 70px rgba(16, 24, 40, 0.12);
-    }
-
-    .hero-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(247, 248, 250, 0.94) 0%, rgba(247, 248, 250, 0.82) 42%, rgba(247, 248, 250, 0.12) 100%);
-    }
-
-    .whatsapp-panel {
-      box-shadow: 0 20px 55px rgba(37, 211, 102, 0.22);
-    }
-
-    .theme-switch {
-      background: #ffffff;
-      border: 1px solid var(--line);
-      color: var(--ink);
-    }
-
-    .theme-switch span {
-      transform: translateX(0);
-    }
-
-    html.dark-theme {
-      color-scheme: dark;
-    }
-
-    html.dark-theme body {
-      background: #08111f;
-      color: #e5edf6;
-    }
-
-    html.dark-theme .hero-media::after {
-      background: linear-gradient(90deg, rgba(8, 17, 31, 0.94) 0%, rgba(8, 17, 31, 0.82) 45%, rgba(8, 17, 31, 0.26) 100%);
-    }
-
-    html.dark-theme .bg-white,
-    html.dark-theme .bg-white\/95,
-    html.dark-theme .bg-white\/86,
-    html.dark-theme .bg-white\/85,
-    html.dark-theme .bg-white\/70,
-    html.dark-theme .bg-slate-50,
-    html.dark-theme footer {
-      background-color: rgba(13, 24, 40, 0.96) !important;
-    }
-
-    html.dark-theme .bg-slate-100 {
-      background-color: #111d2e !important;
-    }
-
-    html.dark-theme .text-slate-950,
-    html.dark-theme .text-slate-900,
-    html.dark-theme .text-slate-800,
-    html.dark-theme .text-slate-700 {
-      color: #e5edf6 !important;
-    }
-
-    html.dark-theme .text-slate-600,
-    html.dark-theme .text-slate-500 {
-      color: #a7b3c4 !important;
-    }
-
-    html.dark-theme .border-slate-200,
-    html.dark-theme .border-slate-300,
-    html.dark-theme footer {
-      border-color: rgba(148, 163, 184, 0.24) !important;
-    }
-
-    html.dark-theme input,
-    html.dark-theme textarea,
-    html.dark-theme select {
-      background-color: #0b1728 !important;
-      color: #e5edf6 !important;
-      border-color: rgba(148, 163, 184, 0.34) !important;
-    }
-
-    html.dark-theme input::placeholder,
-    html.dark-theme textarea::placeholder {
-      color: #8290a3;
-    }
-
-    html.dark-theme .shadow-business {
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
-    }
-
-    html.dark-theme .theme-switch {
-      background: #101b2b;
-      border-color: rgba(148, 163, 184, 0.34);
-      color: #e5edf6;
-    }
-
-    html.dark-theme .theme-switch span {
-      background: var(--gold);
-      transform: translateX(1.55rem);
-    }
-
-    @media (max-width: 767px) {
-      .hero-media::after {
-        background: linear-gradient(180deg, rgba(247, 248, 250, 0.96) 0%, rgba(247, 248, 250, 0.88) 55%, rgba(247, 248, 250, 0.56) 100%);
-      }
-
-      html.dark-theme .hero-media::after {
-        background: linear-gradient(180deg, rgba(8, 17, 31, 0.97) 0%, rgba(8, 17, 31, 0.9) 58%, rgba(8, 17, 31, 0.62) 100%);
-      }
-    }
-  </style>
-  <script>
-    try {
-      if (localStorage.getItem('decisionLegalTheme') === 'dark') {
-        document.documentElement.classList.add('dark-theme');
-      }
-    } catch (error) {
-      document.documentElement.classList.remove('dark-theme');
-    }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "@id": "https://decisionlegal.com.mx/#despacho",
+    "name": "Decisión Legal",
+    "description": "Despacho jurídico especializado en materia inmobiliaria, corporativa y contractual.",
+    "url": "https://decisionlegal.com.mx/",
+    "telephone": "+525663011513",
+    "email": "contacto@decisionlegal.com.mx",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Baja California 275, Despacho 602",
+      "addressLocality": "Cuauhtémoc",
+      "addressRegion": "Ciudad de México",
+      "addressCountry": "MX"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Ciudad de México"
+    },
+    "knowsLanguage": "es-MX",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Áreas de especialidad",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Derecho inmobiliario" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Derecho corporativo" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Derecho contractual" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Derecho agrario" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Derecho comercio exterior" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestorías en las 32 entidades de la República mexicana" } }
+      ]
+    },
+    "employee": [
+      { "@type": "Attorney", "name": "Jaime Joel Ramírez", "jobTitle": "Abogado contractual" },
+      { "@type": "Attorney", "name": "Gustavo Rodríguez", "jobTitle": "Abogado inmobiliario" },
+      { "@type": "Attorney", "name": "Daniel Pacheco", "jobTitle": "Abogado corporativo" }
+    ]
+  }
   </script>
 </head>
 
 <body>
 
+  <a href="#inicio" class="skip-link">Saltar al contenido</a>
+
   <!-- Navegación -->
-  <nav class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <nav class="site-nav sticky top-0 z-50 backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
       <a href="#inicio" class="flex items-center gap-3" aria-label="Ir al inicio de Decisión Legal">
-        <span class="grid h-10 w-10 place-items-center rounded-sm bg-brand text-lg font-black text-white">DL</span>
+        <span class="logo-plate h-10 px-1.5">
+          <!-- alt vacío a propósito: el enlace ya tiene aria-label y el nombre
+               del despacho viene como texto justo al lado. -->
+          <img src="assets/logo-monograma.svg" alt="" width="606" height="446" class="h-8 w-auto" decoding="async">
+        </span>
         <span class="leading-tight">
-          <span class="block text-lg font-extrabold tracking-tight text-slate-950">Decisión Legal</span>
-          <span class="block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Tranquilidad patrimonial</span>
+          <span class="text-primary block text-lg font-extrabold tracking-tight">Decisión Legal</span>
+          <span class="text-muted hidden text-xs font-semibold uppercase tracking-[0.22em] sm:block">Tranquilidad patrimonial</span>
         </span>
       </a>
+
       <div class="flex items-center gap-3">
-        <div class="hidden items-center gap-8 text-sm font-semibold text-slate-600 lg:flex">
-          <a href="#nosotros" class="transition hover:text-brand">Nosotros</a>
-          <a href="#proceso" class="transition hover:text-brand">¿Por qué?</a>
-          <a href="#servicios" class="transition hover:text-brand">Áreas</a>
-          <a href="#abogados" class="transition hover:text-brand">Abogados</a>
+        <div class="text-secondary hidden items-center gap-6 text-sm font-semibold lg:flex xl:gap-8">
+          <a href="#nosotros" class="link-brand transition">Nosotros</a>
+          <a href="#proceso" class="link-brand transition">Proceso</a>
+          <a href="#servicios" class="link-brand transition">Áreas</a>
+          <a href="#abogados" class="link-brand transition">Abogados</a>
+          <a href="#asesorias" class="link-brand transition">Asesorías</a>
           <a href="#contacto"
-            class="rounded-sm bg-slate-950 px-5 py-3 text-white transition hover:bg-brand">Contacto</a>
+            class="surface-inverse hover-brand rounded-sm px-5 py-3 transition">Contacto</a>
         </div>
-        <button id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Cambiar a modo oscuro"
-          class="theme-switch inline-flex h-10 w-[4.5rem] items-center rounded-full px-1 transition focus:outline-none focus:ring-4 focus:ring-cyan-900/15">
-          <span class="grid h-8 w-8 place-items-center rounded-full bg-brand text-xs font-black text-white transition-transform duration-300"
-            aria-hidden="true">☾</span>
+
+        <button id="themeToggle" type="button" role="switch" aria-checked="true" aria-label="Cambiar a modo claro"
+          class="theme-switch inline-flex h-10 w-[4.5rem] items-center rounded-full px-1 transition">
+          <span class="bg-brand grid h-8 w-8 place-items-center rounded-full text-xs font-black text-white"
+            aria-hidden="true">☀</span>
         </button>
+
+        <button id="navToggle" type="button" class="nav-toggle border-line grid h-10 w-10 place-items-center gap-[4px] rounded-sm border lg:hidden"
+          aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menú de navegación">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="navPanel" class="nav-panel lg:hidden" data-open="false">
+      <div>
+        <div class="text-secondary mx-auto flex max-w-7xl flex-col px-5 pb-5 pt-2 text-base font-semibold">
+          <a href="#nosotros" class="border-line link-brand border-b py-4 transition">Nosotros</a>
+          <a href="#proceso" class="border-line link-brand border-b py-4 transition">Proceso</a>
+          <a href="#servicios" class="border-line link-brand border-b py-4 transition">Áreas</a>
+          <a href="#abogados" class="border-line link-brand border-b py-4 transition">Abogados</a>
+          <a href="#asesorias" class="border-line link-brand border-b py-4 transition">Asesorías</a>
+          <a href="#contacto"
+            class="bg-brand mt-5 rounded-sm px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.16em] text-white">Contacto</a>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section id="inicio" class="relative min-h-[86vh] overflow-hidden">
+  <section id="inicio" class="relative min-h-[86svh] overflow-hidden">
     <div class="hero-media absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85"
-        alt="Equipo ejecutivo revisando una estrategia legal en una sala de juntas"
-        class="h-full w-full object-cover">
+      <picture class="block h-full w-full">
+        <source type="image/avif" sizes="100vw"
+          srcset="assets/hero-800.avif 800w, assets/hero-1200.avif 1200w, assets/hero-1600.avif 1600w">
+        <img src="assets/hero-1600.jpg" sizes="100vw"
+          srcset="assets/hero-800.jpg 800w, assets/hero-1200.jpg 1200w, assets/hero-1600.jpg 1600w"
+          alt="Escritorio de despacho con balanza de la justicia, una escritura sellada con pluma fuente, planos arquitectónicos, la maqueta de una casa y un juego de llaves"
+          width="1600" height="900" fetchpriority="high" decoding="async" class="h-full w-full object-cover">
+      </picture>
     </div>
 
-    <div class="relative z-10 mx-auto grid min-h-[86vh] max-w-7xl items-center px-5 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+    <div class="relative z-10 mx-auto grid min-h-[86svh] max-w-7xl items-center px-5 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
       <div class="max-w-3xl">
-        <p class="mb-5 inline-flex items-center gap-3 border-l-4 border-[var(--gold)] bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-slate-700">
-          Decisión Legal
+        <p class="surface-glass-soft border-gold text-secondary mb-5 inline-flex items-center gap-3 border-l-4 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em]">
+          Abogados en CDMX, Estado de México, Quintana Roo y Yucat
         </p>
-        <h1 class="text-5xl font-extrabold leading-[1.02] tracking-tight text-slate-950 md:text-7xl">
+        <h1 class="text-primary text-5xl font-extrabold leading-[1.02] tracking-tight md:text-7xl">
           Tu tranquilidad patrimonial.
         </h1>
-        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-700">
+        <p class="text-secondary mt-7 max-w-2xl text-lg leading-8">
           Resolvemos necesidades en materia inmobiliaria, corporativa y contractual con estrategias precisas,
           transparencia y enfoque en proteger el patrimonio de nuestros clientes.
         </p>
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a href="#contacto"
-            class="inline-flex items-center justify-center rounded-sm bg-brand px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:bg-brand-dark">
+            class="bg-brand hover-brand-dark inline-flex items-center justify-center rounded-sm px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white transition">
             Trabajemos
           </a>
-          <a href="https://wa.me/525589161502?text=Hola%20Decisi%C3%B3n%20Legal%2C%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20proteger%20mi%20tranquilidad%20patrimonial."
+          <a href="#"
+            data-whatsapp-message="Hola Decisión Legal, me gustaría recibir asesoría para proteger mi tranquilidad patrimonial."
             target="_blank" rel="noopener"
-            class="inline-flex items-center justify-center gap-3 rounded-sm border border-slate-300 bg-white/85 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-slate-950 transition hover:border-[var(--whatsapp)] hover:text-brand">
+            class="surface-glass border-line text-primary inline-flex items-center justify-center gap-3 rounded-sm border px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] transition hover:border-[var(--whatsapp)]">
             <svg aria-hidden="true" class="h-5 w-5 text-[#128c4a]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.88 11.88 0 0 0 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.404-8.394z" />
             </svg>
@@ -237,245 +191,337 @@
       </div>
 
       <div class="mt-12 grid gap-4 lg:mt-0">
-        <div class="ml-auto w-full max-w-md border border-white/70 bg-white/86 p-6 backdrop-blur shadow-business">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand">Estrategias concretas</p>
-          <p class="mt-3 text-3xl font-extrabold tracking-tight text-slate-950">Servicio preciso y eficaz para cada caso.</p>
-          <div class="mt-6 grid grid-cols-3 gap-3 text-center">
-            <div class="border border-slate-200 bg-white p-4">
-              <strong class="block text-2xl text-brand">360°</strong>
-              <span class="text-xs font-medium text-slate-500">asesoría</span>
-            </div>
-            <div class="border border-slate-200 bg-white p-4">
-              <strong class="block text-2xl text-brand">3</strong>
-              <span class="text-xs font-medium text-slate-500">ramas clave</span>
-            </div>
-            <div class="border border-slate-200 bg-white p-4">
-              <strong class="block text-2xl text-brand">DL</strong>
-              <span class="text-xs font-medium text-slate-500">confianza</span>
-            </div>
-          </div>
+        <div class="surface-glass border-line shadow-business ml-auto w-full max-w-md border p-7 backdrop-blur">
+          <p class="text-brand text-sm font-semibold uppercase tracking-[0.2em]">Estrategias concretas</p>
+          <p class="text-primary mt-3 text-3xl font-extrabold tracking-tight">Servicio preciso y eficaz para cada caso.</p>
+
+          <!-- Datos verificables. Cuando el despacho confirme años de ejercicio u
+               operaciones cerradas, sustituir estas filas: son la prueba más fuerte. -->
+          <ul class="mt-7 space-y-4">
+            <li class="border-line flex items-start gap-4 border-t pt-4">
+              <span class="text-brand text-2xl font-extrabold leading-none">6</span>
+              <span class="text-secondary text-sm leading-6">áreas de especialidad, del derecho inmobiliario al corporativo</span>
+            </li>
+            <li class="border-line flex items-start gap-4 border-t pt-4">
+              <span class="text-brand text-2xl font-extrabold leading-none">3</span>
+              <span class="text-secondary text-sm leading-6">Abogados especializados en derecho inmobiliario y corporativo, con más de 15 años de experiencia en notaría pública</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Firma -->
-  <section id="nosotros" class="bg-white py-24">
+  <section id="nosotros" class="surface py-24">
     <div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
       <div>
-        <p class="text-sm font-bold uppercase tracking-[0.24em] text-brand">Nosotros</p>
-        <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+        <p class="text-brand text-sm font-bold uppercase tracking-[0.24em]">Nosotros</p>
+        <h2 class="text-primary mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
           Especialistas en materia inmobiliaria, contractual y corporativa.
         </h2>
       </div>
       <div class="grid gap-8">
-        <p class="text-lg leading-8 text-slate-600">
-          En <strong class="text-slate-950">Decisión Legal</strong> nos enfocamos en resolver necesidades jurídicas en
+        <p class="text-secondary text-lg leading-8">
+          En <strong class="text-primary">Decisión Legal</strong> nos enfocamos en resolver necesidades jurídicas en
           materia inmobiliaria, corporativa y contractual, garantizando en todo momento la tranquilidad patrimonial de
           nuestros clientes.
         </p>
         <div class="grid gap-4 sm:grid-cols-3">
-          <div class="border-l-2 border-brand pl-5">
-            <h3 class="font-bold text-slate-950">Nuestros abogados</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Equipo conformado por especialistas en las áreas clave de la firma.</p>
+          <div class="border-brand border-l-2 pl-5">
+            <h3 class="text-primary font-bold">Nuestros abogados</h3>
+            <p class="text-muted mt-2 text-sm leading-6">Equipo conformado por especialistas en las áreas clave de la firma.</p>
           </div>
-          <div class="border-l-2 border-brand pl-5">
-            <h3 class="font-bold text-slate-950">Transparencia</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Trabajamos con claridad, comunicación constante y respeto a la ley.</p>
+          <div class="border-brand border-l-2 pl-5">
+            <h3 class="text-primary font-bold">Transparencia</h3>
+            <p class="text-muted mt-2 text-sm leading-6">Trabajamos con claridad, comunicación constante y respeto a la ley.</p>
           </div>
-          <div class="border-l-2 border-brand pl-5">
-            <h3 class="font-bold text-slate-950">Filosofía</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Recibimos, estudiamos y planteamos soluciones para cada caso concreto.</p>
+          <div class="border-brand border-l-2 pl-5">
+            <h3 class="text-primary font-bold">Filosofía</h3>
+            <p class="text-muted mt-2 text-sm leading-6">Recibimos, estudiamos y planteamos soluciones para cada caso concreto.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Por qué -->
-  <section id="proceso" class="bg-slate-950 py-24 text-white">
+  <!-- Proceso -->
+  <section id="proceso" class="surface-inverse py-24">
     <div class="mx-auto max-w-7xl px-5 lg:px-8">
       <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.24em] text-[#77d7e4]">¿Por qué Decisión Legal?</p>
-          <h2 class="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Asesoría integral desde la formación de tu empresa.</h2>
+          <h2 class="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Sabes exactamente qué pasa después de escribirnos.</h2>
+          <p class="text-on-inverse-muted mt-6 text-base leading-7">
+            Cuatro pasos, sin sorpresas: conoces el alcance, los tiempos y el costo antes de que iniciemos cualquier
+            gestión.
+          </p>
         </div>
-        <div class="grid gap-4 md:grid-cols-3">
-          <div class="border border-white/15 p-6">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="border-on-inverse border p-6">
             <span class="text-sm font-bold text-[#77d7e4]">01</span>
-            <h3 class="mt-4 font-bold">Inmobiliario</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Estrategias fiscales, investigación inmobiliaria, localización catastral y gestión ante autoridades administrativas, registrales y de desarrollo urbano.</p>
+            <h3 class="mt-4 font-bold">Recibimos</h3>
+            <p class="text-on-inverse-muted mt-3 text-sm leading-6">Escuchamos tu caso por WhatsApp, teléfono o en el despacho, y reunimos la documentación relevante.</p>
           </div>
-          <div class="border border-white/15 p-6">
+          <div class="border-on-inverse border p-6">
             <span class="text-sm font-bold text-[#77d7e4]">02</span>
-            <h3 class="mt-4 font-bold">Corporativo</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Constitución, modificación, transmisión de acciones o partes sociales, disolución y liquidación de sociedades mercantiles y civiles.</p>
+            <h3 class="mt-4 font-bold">Estudiamos</h3>
+            <p class="text-on-inverse-muted mt-3 text-sm leading-6">Analizamos el expediente y la normativa aplicable para identificar riesgos reales y las opciones disponibles.</p>
           </div>
-          <div class="border border-white/15 p-6">
+          <div class="border-on-inverse border p-6">
             <span class="text-sm font-bold text-[#77d7e4]">03</span>
-            <h3 class="mt-4 font-bold">Contractual</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-300">Asesoría y redacción de contratos de comodato, compraventa, arrendamiento, prestación de servicios, comisión mercantil, mutuo y crédito.</p>
+            <h3 class="mt-4 font-bold">Planteamos</h3>
+            <p class="text-on-inverse-muted mt-3 text-sm leading-6">Te presentamos la estrategia, el alcance y los tiempos estimados antes de iniciar cualquier trámite.</p>
+          </div>
+          <div class="border-on-inverse border p-6">
+            <span class="text-sm font-bold text-[#77d7e4]">04</span>
+            <h3 class="mt-4 font-bold">Ejecutamos</h3>
+            <p class="text-on-inverse-muted mt-3 text-sm leading-6">Gestionamos el asunto ante las autoridades correspondientes y te informamos de cada avance.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
+  <!-- Áreas de especialidad -->
   <section id="servicios" class="py-24">
     <div class="mx-auto max-w-7xl px-5 lg:px-8">
       <div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
-          <p class="text-sm font-bold uppercase tracking-[0.24em] text-brand">Nuestras áreas</p>
-          <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">Áreas de especialidad</h2>
+          <p class="text-brand text-sm font-bold uppercase tracking-[0.24em]">Nuestras áreas</p>
+          <h2 class="text-primary mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Áreas de especialidad</h2>
         </div>
-        <p class="max-w-xl text-base leading-7 text-slate-600">
+        <p class="text-secondary max-w-xl text-base leading-7">
           Somos una opción sólida para resolver problemas de distintas áreas con precisión, eficacia y acompañamiento cercano.
         </p>
       </div>
 
-      <div class="grid gap-5 md:grid-cols-3">
-        <article class="border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-business">
-          <div class="mb-7 grid h-12 w-12 place-items-center bg-slate-950 text-white">
+      <div id="serviceGrid" class="grid gap-5 md:grid-cols-3">
+        <article class="surface border-line hover-lift border p-8">
+          <div class="surface-inverse mb-7 grid h-12 w-12 place-items-center">
             <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M6 21V7l6-4 6 4v14M9 10h6M9 14h6M9 18h6" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-950">Gestoría</h3>
-          <p class="mt-4 text-sm leading-7 text-slate-600">
-            Apoyo en los trámites necesarios para el funcionamiento legal de establecimientos mercantiles.
-          </p>
+          <h3 class="text-primary text-xl font-bold">Derecho inmobiliario</h3>
+          <p class="text-secondary mt-4 text-sm leading-7">Protección, registro y publicidad de derechos reales sobre inmuebles, con gestión ante las autoridades competentes.</p>
         </article>
 
-        <article class="border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-business">
-          <div class="mb-7 grid h-12 w-12 place-items-center bg-brand text-white">
+        <article class="surface border-line hover-lift border p-8">
+          <div class="bg-brand mb-7 grid h-12 w-12 place-items-center text-white">
             <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M5 7h14M7 7l-4 8h8L7 7Zm10 0-4 8h8l-4-8Z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-950">Civil</h3>
-          <p class="mt-4 text-sm leading-7 text-slate-600">
-            Atención a relaciones y figuras jurídicas del Derecho Civil conforme a la normativa local y federal aplicable.
-          </p>
+          <h3 class="text-primary text-xl font-bold">Derecho corporativo</h3>
+          <p class="text-secondary mt-4 text-sm leading-7">Asesoría permanente para empresas en sus actividades cotidianas, estructura societaria y toma de decisiones.</p>
         </article>
 
-        <article class="border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-business">
-          <div class="mb-7 grid h-12 w-12 place-items-center bg-[var(--gold)] text-white">
+        <article class="surface border-line hover-lift border p-8">
+          <div class="bg-gold mb-7 grid h-12 w-12 place-items-center text-white">
             <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 5 3.4 8.5 8 9 4.6-.5 8-4 8-9V6l-8-3Zm-3 9 2 2 4-5" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-950">Inmobiliario</h3>
-          <p class="mt-4 text-sm leading-7 text-slate-600">
-            Protección, registro y publicidad de derechos reales sobre inmuebles, con gestión ante autoridades competentes.
-          </p>
+          <h3 class="text-primary text-xl font-bold">Derecho contractual</h3>
+          <p class="text-secondary mt-4 text-sm leading-7">Elaboración y revisión de contratos de comodato, compraventa, arrendamiento, servicios profesionales, comisión mercantil, préstamo, mutuo o crédito.</p>
         </article>
 
-        <article class="border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-business">
-          <div class="mb-7 grid h-12 w-12 place-items-center bg-slate-950 text-white">
+        <article class="surface border-line hover-lift border p-8">
+          <div class="surface-inverse mb-7 grid h-12 w-12 place-items-center">
             <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 19V5l8-3 8 3v14l-8 3-8-3Zm8-17v20M4 5l8 3 8-3" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-950">Agrario</h3>
-          <p class="mt-4 text-sm leading-7 text-slate-600">
-            Estudio y acompañamiento en procesos de acceso a la tierra, entorno rural y régimen ejidal.
-          </p>
+          <h3 class="text-primary text-xl font-bold">Derecho agrario</h3>
+          <p class="text-secondary mt-4 text-sm leading-7">Estudio y acompañamiento en procesos de acceso a la tierra, entorno rural y régimen ejidal.</p>
         </article>
 
-        <article class="border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-business">
-          <div class="mb-7 grid h-12 w-12 place-items-center bg-brand text-white">
+        <article class="surface border-line hover-lift border p-8">
+          <div class="bg-brand mb-7 grid h-12 w-12 place-items-center text-white">
             <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M7 21V9h10v12M9 9V5h6v4M10 13h4M10 17h4" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-950">Corporativo</h3>
-          <p class="mt-4 text-sm leading-7 text-slate-600">
-            Asesoría permanente para empresas en sus actividades cotidianas, estructura societaria y toma de decisiones.
-          </p>
+          <h3 class="text-primary text-xl font-bold">Derecho comercio exterior</h3>
+          <p class="text-secondary mt-4 text-sm leading-7">Acompañamiento en inversión extranjera, constitución de empresas con capital extranjero y contratos internacionales, conforme a la normativa aplicable.</p>
         </article>
 
-        <article class="border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-business">
-          <div class="mb-7 grid h-12 w-12 place-items-center bg-[var(--gold)] text-white">
+        <article class="surface border-line hover-lift border p-8">
+          <div class="bg-gold mb-7 grid h-12 w-12 place-items-center text-white">
             <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M7 3h7l3 3v15H7V3Zm7 0v4h4M9.5 11h5M9.5 15h5M9.5 19h3" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-950">Contractual</h3>
-          <p class="mt-4 text-sm leading-7 text-slate-600">
-            Elaboración y revisión de contratos de comodato, compraventa, arrendamiento, servicios profesionales, comisión mercantil, préstamo, mutuo o crédito.
-          </p>
+          <h3 class="text-primary text-xl font-bold">Gestorías en las 32 entidades de la República mexicana</h3>
+          <p class="text-secondary mt-4 text-sm leading-7">Representación y seguimiento de trámites ante registros públicos, catastros y tesorerías en cualquier estado del país, sin que tengas que trasladarte.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Abogados -->
-  <section id="abogados" class="bg-white py-24">
+  <section id="abogados" class="surface py-24">
     <div class="mx-auto max-w-7xl px-5 lg:px-8">
       <div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
-          <p class="text-sm font-bold uppercase tracking-[0.24em] text-brand">Abogados</p>
-          <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">Un equipo para brindarte la mejor atención.</h2>
+          <p class="text-brand text-sm font-bold uppercase tracking-[0.24em]">Abogados</p>
+          <h2 class="text-primary mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Un equipo para brindarte la mejor atención.</h2>
         </div>
-        <p class="max-w-xl text-base leading-7 text-slate-600">
+        <p class="text-secondary max-w-xl text-base leading-7">
           Nuestro equipo está integrado por abogados enfocados en las áreas contractual, inmobiliaria y corporativa.
         </p>
       </div>
 
-      <div class="grid gap-5 md:grid-cols-3">
-        <article class="border border-slate-200 bg-slate-50 p-8">
-          <span class="mb-6 grid h-14 w-14 place-items-center bg-brand text-lg font-black text-white">JR</span>
-          <h3 class="text-xl font-bold text-slate-950">Jaime Joel Ramírez</h3>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand">Abogado contractual</p>
-          <p class="mt-5 text-sm leading-7 text-slate-600">Acompañamiento en elaboración, revisión y estrategia documental para operaciones contractuales.</p>
+      <div id="attorneyGrid" class="grid gap-5 md:grid-cols-3">
+        <article class="surface-raised border-line border p-8">
+          <!-- Para agregar la fotografía, sustituir el <span> de iniciales por:
+               <img src="assets/jaime-ramirez.jpg" alt="Jaime Joel Ramírez">
+               El marco .attorney-photo mantiene el mismo tamaño y recorte. -->
+          <div class="attorney-photo bg-brand mb-6">
+            <span class="text-lg font-black text-white">JR</span>
+          </div>
+          <h3 class="text-primary text-xl font-bold">Jaime Joel Ramírez Escobar</h3>
+          <p class="text-brand mt-2 text-sm font-semibold uppercase tracking-[0.18em]">Socio Fundador</p>
+          <!-- <p class="text-secondary mt-5 text-sm leading-7">Acompañamiento en elaboración, revisión y estrategia documental para operaciones contractuales.</p> -->
         </article>
 
-        <article class="border border-slate-200 bg-slate-50 p-8">
-          <span class="mb-6 grid h-14 w-14 place-items-center bg-slate-950 text-lg font-black text-white">GR</span>
-          <h3 class="text-xl font-bold text-slate-950">Gustavo Rodríguez</h3>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand">Abogado inmobiliario</p>
-          <p class="mt-5 text-sm leading-7 text-slate-600">Gestión y asesoría en asuntos inmobiliarios, registros, investigación y trámites ante autoridades.</p>
+        <article class="surface-raised border-line border p-8">
+          <div class="attorney-photo surface-inverse mb-6">
+            <span class="text-lg font-black text-white">GR</span>
+          </div>
+          <h3 class="text-primary text-xl font-bold">Gustavo Rodríguez</h3>
+          <p class="text-brand mt-2 text-sm font-semibold uppercase tracking-[0.18em]">Socio Fundador</p>
         </article>
 
-        <article class="border border-slate-200 bg-slate-50 p-8">
-          <span class="mb-6 grid h-14 w-14 place-items-center bg-[var(--gold)] text-lg font-black text-white">DP</span>
-          <h3 class="text-xl font-bold text-slate-950">Daniel Pacheco</h3>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand">Abogado corporativo</p>
-          <p class="mt-5 text-sm leading-7 text-slate-600">Asesoría para sociedades, operación empresarial y decisiones corporativas cotidianas.</p>
+        <article class="surface-raised border-line border p-8">
+          <div class="attorney-photo bg-gold mb-6">
+            <span class="text-lg font-black text-white">DP</span>
+          </div>
+          <h3 class="text-primary text-xl font-bold">Carlos Alejandro Vázquez Salazar</h3>
+          <p class="text-brand mt-2 text-sm font-semibold uppercase tracking-[0.18em]">Socio Fundador</p>
+          <!-- <p class="text-secondary mt-5 text-sm leading-7">Asesoría para sociedades, operación empresarial y decisiones corporativas cotidianas.</p> -->
         </article>
       </div>
     </div>
   </section>
 
+  <!-- Asesorías -->
+  <section id="asesorias" class="surface-sunken border-line border-t py-24">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div>
+          <p class="text-brand text-sm font-bold uppercase tracking-[0.24em]">Asesorías</p>
+          <h2 class="text-primary mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Asesoría respecto de:</h2>
+        </div>
+        <p class="text-secondary max-w-xl text-base leading-7">
+          Acompañamos cada trámite de principio a fin, con el alcance y los tiempos claros desde el inicio.
+        </p>
+      </div>
+
+      <!-- Para agregar o quitar rubros, basta duplicar un <li>: la retícula de dos
+           columnas y las líneas divisorias se acomodan solas. -->
+      <ul class="surface border-line shadow-business grid border p-6 md:grid-cols-2 md:gap-x-10 md:p-9">
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Constitución de personas morales
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Actas de asamblea y su respectiva protocolización
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Enajenación de acciones y partes sociales
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Materia antilavado (LFPIORPI)
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Otorgamiento y revocación de poderes
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Compraventa de muebles e inmuebles
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Cesión de derechos
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Asesoría en materia testamentaria
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Asesoría en materia sucesoria
+        </li>
+        <li class="border-line text-secondary flex items-start gap-4 border-t py-4 text-base leading-7">
+          <svg aria-hidden="true" class="text-brand mt-1 h-5 w-5 flex-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+          </svg>
+          Gestoría de trámites en registro público, tesorerías y organismos de agua en toda la República
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Contacto -->
-  <section id="contacto" class="bg-white py-24">
+  <section id="contacto" class="surface-sunken py-24">
     <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
       <div>
-        <p class="text-sm font-bold uppercase tracking-[0.24em] text-brand">Contacto</p>
-        <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">Contáctanos.</h2>
-        <p class="mt-6 text-lg leading-8 text-slate-600">
+        <p class="text-brand text-sm font-bold uppercase tracking-[0.24em]">Contacto</p>
+        <h2 class="text-primary mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Contáctanos.</h2>
+        <p class="text-secondary mt-6 text-lg leading-8">
           Nos encantará poder trabajar contigo. Déjanos un mensaje y cuéntanos qué necesitas resolver.
         </p>
 
-        <div class="mt-10 space-y-5 text-sm font-medium text-slate-700">
+        <address class="text-secondary mt-10 space-y-5 text-sm font-medium not-italic">
           <p class="flex items-center gap-4">
-            <span class="grid h-10 w-10 place-items-center bg-slate-100 text-brand" aria-hidden="true">CDMX</span>
-            Av. Baja California 275, Despacho 602, Col. Hipódromo, Cuauhtémoc, CDMX
+            <span class="surface text-brand border-line grid h-10 w-10 flex-none place-items-center border">
+              <span class="sr-only">Teléfono:</span>
+              <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 5c0 8.3 6.7 15 15 15l1.5-3.5-4.2-1.8-2 2A12.6 12.6 0 0 1 8.3 9.7l2-2L8.5 3.5 5 5Z" />
+              </svg>
+            </span>
+            <a href="tel:+525663011513" class="link-brand transition">+52 56 63 01 15 13</a>
           </p>
           <p class="flex items-center gap-4">
-            <span class="grid h-10 w-10 place-items-center bg-slate-100 text-brand" aria-hidden="true">TEL</span>
-            <a href="tel:+525589161502" class="hover:text-brand">+52 55 89 16 15 02</a>
+            <span class="surface text-brand border-line grid h-10 w-10 flex-none place-items-center border">
+              <span class="sr-only">Correo electrónico:</span>
+              <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3.5 7 8.5 6 8.5-6" />
+              </svg>
+            </span>
+            <a href="mailto:contacto@decisionlegal.com.mx" class="link-brand transition">contacto@decisionlegal.com.mx</a>
           </p>
-          <p class="flex items-center gap-4">
-            <span class="grid h-10 w-10 place-items-center bg-slate-100 text-brand" aria-hidden="true">@</span>
-            <a href="mailto:contacto@decisionlegal.com.mx" class="hover:text-brand">contacto@decisionlegal.com.mx</a>
-          </p>
-        </div>
+        </address>
 
-        <a href="https://wa.me/525589161502?text=Hola%20Decisi%C3%B3n%20Legal%2C%20quiero%20recibir%20orientaci%C3%B3n%20sobre%20un%20asunto%20inmobiliario%2C%20corporativo%20o%20contractual."
+        <a href="#"
+          data-whatsapp-message="Hola Decisión Legal, quiero recibir orientación sobre un asunto inmobiliario, corporativo o contractual."
           target="_blank" rel="noopener"
-          class="whatsapp-panel mt-10 inline-flex w-full items-center justify-center gap-3 rounded-sm bg-[#25d366] px-6 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-950 transition hover:bg-[#1fbd5a] sm:w-auto">
+          class="whatsapp-panel bg-whatsapp mt-10 inline-flex w-full items-center justify-center gap-3 rounded-sm px-6 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-slate-950 transition sm:w-auto">
           <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.88 11.88 0 0 0 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.404-8.394z" />
           </svg>
@@ -483,45 +529,47 @@
         </a>
       </div>
 
-      <form id="whatsappForm" class="border border-slate-200 bg-slate-50 p-6 shadow-business md:p-9">
+      <form id="whatsappForm" class="surface border-line shadow-business border p-6 md:p-9">
         <div class="grid gap-5 sm:grid-cols-2">
-          <label class="grid gap-2 text-sm font-bold text-slate-800">
+          <label class="text-primary grid gap-2 text-sm font-bold">
             Nombre
-            <input id="nombre" type="text" required placeholder="Nombre completo"
-              class="min-h-12 border border-slate-300 bg-white px-4 text-base font-medium text-slate-950 outline-none transition focus:border-brand focus:ring-4 focus:ring-cyan-900/10">
+            <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Nombre completo"
+              class="field px-4 text-base font-medium">
           </label>
-          <label class="grid gap-2 text-sm font-bold text-slate-800">
+          <label class="text-primary grid gap-2 text-sm font-bold">
             Teléfono
-            <input id="telefono" type="tel" placeholder="+52 55..."
-              class="min-h-12 border border-slate-300 bg-white px-4 text-base font-medium text-slate-950 outline-none transition focus:border-brand focus:ring-4 focus:ring-cyan-900/10">
+            <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+52 55..."
+              class="field px-4 text-base font-medium">
           </label>
         </div>
-        <label class="mt-5 grid gap-2 text-sm font-bold text-slate-800">
+        <label class="text-primary mt-5 grid gap-2 text-sm font-bold">
           Servicio de interés
-          <select id="servicio"
-            class="min-h-12 border border-slate-300 bg-white px-4 text-base font-medium text-slate-950 outline-none transition focus:border-brand focus:ring-4 focus:ring-cyan-900/10">
-            <option>Gestoría</option>
-            <option>Civil</option>
-            <option>Inmobiliario</option>
-            <option>Agrario</option>
-            <option>Corporativo</option>
-            <option>Contractual</option>
-            <option>Consulta general</option>
-          </select>
+          <select id="servicio" name="servicio" class="field px-4 text-base font-medium"></select>
         </label>
-        <label class="mt-5 grid gap-2 text-sm font-bold text-slate-800">
+        <label class="text-primary mt-5 grid gap-2 text-sm font-bold">
           Mensaje
-          <textarea id="mensaje" rows="5" required placeholder="Cuéntenos brevemente qué necesita resolver"
-            class="border border-slate-300 bg-white p-4 text-base font-medium text-slate-950 outline-none transition focus:border-brand focus:ring-4 focus:ring-cyan-900/10"></textarea>
+          <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntenos brevemente qué necesita resolver"
+            class="field p-4 text-base font-medium"></textarea>
         </label>
+
+        <label class="text-secondary mt-6 flex items-start gap-3 text-sm leading-6">
+          <input id="consentimiento" name="consentimiento" type="checkbox" required
+            class="border-line mt-1 h-5 w-5 flex-none accent-[var(--brand)]">
+          <span>
+            He leído y acepto el
+            <a href="aviso-privacidad.html" class="text-brand font-semibold underline">Aviso de Privacidad</a>
+            y autorizo el tratamiento de mis datos personales para ser contactado.
+          </span>
+        </label>
+
         <button type="submit"
-          class="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-sm bg-slate-950 px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white transition hover:bg-brand">
+          class="surface-inverse hover-brand mt-6 inline-flex w-full items-center justify-center gap-3 rounded-sm px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] transition">
           Mandar por WhatsApp
           <svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
           </svg>
         </button>
-        <p class="mt-4 text-center text-xs leading-5 text-slate-500">
+        <p class="text-muted mt-4 text-center text-xs leading-5">
           El botón abrirá WhatsApp con su mensaje listo para enviar.
         </p>
       </form>
@@ -529,9 +577,9 @@
   </section>
 
   <!-- Botón de WhatsApp accesible -->
-  <a href="https://wa.me/525589161502?text=Hola%20Decisi%C3%B3n%20Legal%2C%20necesito%20asesor%C3%ADa%20jur%C3%ADdica."
-    target="_blank" rel="noopener" aria-label="Enviar mensaje a Decisión Legal por WhatsApp"
-    class="fixed bottom-5 right-5 z-[60] inline-flex items-center gap-3 rounded-full bg-[#25d366] px-5 py-4 font-bold text-slate-950 shadow-2xl transition hover:translate-y-[-2px] hover:bg-[#1fbd5a] focus:outline-none focus:ring-4 focus:ring-[#25d366]/35">
+  <a href="#" data-whatsapp-message="Hola Decisión Legal, necesito asesoría jurídica." target="_blank" rel="noopener"
+    aria-label="Enviar mensaje a Decisión Legal por WhatsApp"
+    class="bg-whatsapp fixed bottom-5 right-5 z-[60] inline-flex items-center gap-3 rounded-full px-5 py-4 font-bold text-slate-950 shadow-2xl transition hover:translate-y-[-2px] focus:outline-none focus:ring-4 focus:ring-[#25d366]/35">
     <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.88 11.88 0 0 0 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.404-8.394z" />
     </svg>
@@ -539,58 +587,20 @@
   </a>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-200 bg-white py-10 text-center text-xs text-slate-500">
-    <p class="font-semibold uppercase tracking-[0.2em]">© 2026 Decisión Legal. Todos los derechos reservados.</p>
+  <footer class="surface border-line text-muted border-t py-10 text-center text-xs">
+    <div class="logo-plate mb-7 px-7 py-5">
+      <img src="assets/logo.svg" alt="Decisión Legal y Corporativa: regularización inmobiliaria y derecho corporativo"
+        width="942" height="852" class="w-[240px]" loading="lazy" decoding="async">
+    </div>
+    <p class="font-semibold uppercase tracking-[0.2em]">
+      © <span id="currentYear">2026</span> Decisión Legal. Todos los derechos reservados.
+    </p>
     <div class="mt-4 flex justify-center gap-5">
-      <a href="#" class="hover:text-brand">Aviso de Privacidad</a>
-      <a href="#" class="hover:text-brand">Términos de Servicio</a>
+      <a href="aviso-privacidad.html" class="link-brand transition">Aviso de Privacidad</a>
     </div>
   </footer>
 
-  <script>
-    const form = document.getElementById('whatsappForm');
-    const whatsappNumber = '525589161502';
-    const themeToggle = document.getElementById('themeToggle');
-    const themeToggleIcon = themeToggle.querySelector('span');
-
-    const syncThemeToggle = () => {
-      const isDark = document.documentElement.classList.contains('dark-theme');
-      themeToggle.setAttribute('aria-checked', String(isDark));
-      themeToggle.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-      themeToggleIcon.textContent = isDark ? '☀' : '☾';
-    };
-
-    syncThemeToggle();
-
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark-theme');
-      try {
-        localStorage.setItem('decisionLegalTheme', isDark ? 'dark' : 'light');
-      } catch (error) {
-        // La preferencia simplemente no se guarda si el navegador bloquea localStorage.
-      }
-      syncThemeToggle();
-    });
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const nombre = document.getElementById('nombre').value.trim();
-      const telefono = document.getElementById('telefono').value.trim();
-      const servicio = document.getElementById('servicio').value;
-      const mensaje = document.getElementById('mensaje').value.trim();
-
-      const text = [
-        'Hola Decisión Legal, me gustaría recibir orientación para proteger mi tranquilidad patrimonial.',
-        `Nombre: ${nombre}`,
-        telefono ? `Teléfono: ${telefono}` : '',
-        `Servicio: ${servicio}`,
-        `Mensaje: ${mensaje}`
-      ].filter(Boolean).join('\n');
-
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-    });
-  </script>
+  <script src="scripts/main.js"></script>
 </body>
 
 </html>

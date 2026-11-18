@@ -27,6 +27,13 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#Claude files
+.claude
+
+#Bmad files
+_bmad
+_bmad-output
+
 ### macOS Patch ###
 # iCloud generated files
 *.icloud

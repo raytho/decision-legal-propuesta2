@@ -1,0 +1,469 @@
+/* ---------------------------------------------------------------
+   Tokens semánticos.
+   El tema oscuro solo redefine estos valores; la única excepción es el
+   bloque "Refinamientos del tema oscuro" al final del archivo, que
+   ilumina el filo superior de los paneles con borde.
+   --------------------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+
+  /* Color de contraste: fuente de los textos claros, los bordes
+     translúcidos y el filo de los paneles del tema oscuro. */
+  --contrast: #edf4ff;
+
+  /* Marca */
+  --brand: #0f5f70;
+  --brand-dark: #083f4b;
+  --brand-ink: #0f5f70;
+  --gold: #b48a3c;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1fbd5a;
+
+  /* Superficies */
+  --surface: #ffffff;
+  --surface-sunken: #edf5fd;
+  --surface-raised: #edf5fd;
+  --surface-inverse: #012860;
+
+  /* Texto */
+  --text-primary: #101828;
+  --text-secondary: #475467;
+  --text-muted: #5d6878;
+  --text-on-inverse: #edf4ff;
+  --text-on-inverse-muted: #c4d4ec;
+
+  /* Líneas y sombras */
+  --border: #d0d5dd;
+  --border-strong: #98a2b3;
+  --border-on-inverse: rgba(255, 255, 255, 0.16);
+  --shadow-business: 0 24px 70px rgba(1, 40, 96, 0.12);
+
+  /* Velo del hero: el degradado se arma con estos dos stops */
+  --scrim: 237, 245, 253;
+}
+
+html.dark-theme {
+  color-scheme: dark;
+
+  --brand: #14788d;
+  --brand-dark: #0f5f70;
+  --brand-ink: #5cc9dc;
+
+  --surface: #012860;
+  --surface-sunken: #01173a;
+  --surface-raised: #073a7e;
+  --surface-inverse: #0a4186;
+
+  /* Escala derivada de --contrast (#edf4ff) */
+  --text-primary: #edf4ff;
+  --text-secondary: #c4d4ec;
+  --text-muted: #9fb4d2;
+
+  /* #edf4ff al 18% y 34% */
+  --border: rgba(237, 244, 255, 0.18);
+  --border-strong: rgba(237, 244, 255, 0.34);
+  --shadow-business: 0 24px 70px rgba(1, 15, 38, 0.5);
+
+  --scrim: 1, 23, 58;
+}
+
+/* ---------------------------------------------------------------
+   Base
+   --------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--surface-sunken);
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ---------------------------------------------------------------
+   Utilidades sobre tokens
+   --------------------------------------------------------------- */
+
+.surface {
+  background-color: var(--surface);
+}
+
+.surface-sunken {
+  background-color: var(--surface-sunken);
+}
+
+.surface-raised {
+  background-color: var(--surface-raised);
+}
+
+.surface-inverse {
+  background-color: var(--surface-inverse);
+  color: var(--text-on-inverse);
+}
+
+/* Paneles translúcidos sobre la imagen del hero. El valor opaco es el
+   respaldo: si color-mix no está disponible, el texto conserva su contraste. */
+.surface-glass,
+.surface-glass-soft {
+  background-color: var(--surface);
+}
+
+@supports (background-color: color-mix(in srgb, red 50%, transparent)) {
+  .surface-glass {
+    background-color: color-mix(in srgb, var(--surface) 88%, transparent);
+  }
+
+  .surface-glass-soft {
+    background-color: color-mix(in srgb, var(--surface) 74%, transparent);
+  }
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-on-inverse {
+  color: var(--text-on-inverse);
+}
+
+.text-on-inverse-muted {
+  color: var(--text-on-inverse-muted);
+}
+
+.text-brand {
+  color: var(--brand-ink);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-brand {
+  background-color: var(--brand);
+}
+
+.bg-brand-dark {
+  background-color: var(--brand-dark);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.bg-whatsapp {
+  background-color: var(--whatsapp);
+}
+
+.bg-whatsapp:hover {
+  background-color: var(--whatsapp-dark);
+}
+
+.border-brand {
+  border-color: var(--brand-ink);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+.border-line {
+  border-color: var(--border);
+}
+
+.border-line-strong {
+  border-color: var(--border-strong);
+}
+
+.border-on-inverse {
+  border-color: var(--border-on-inverse);
+}
+
+.shadow-business {
+  box-shadow: var(--shadow-business);
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-business);
+  border-color: var(--brand-ink);
+}
+
+.link-brand:hover {
+  color: var(--brand-ink);
+}
+
+/* `brand` no forma parte de la paleta de Tailwind, así que las variantes
+   hover:/focus: deben definirse aquí y no como utilidades. */
+.hover-brand:hover {
+  background-color: var(--brand);
+  color: #ffffff;
+}
+
+.hover-brand-dark:hover {
+  background-color: var(--brand-dark);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 70;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background-color: var(--brand);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------
+   Navegación
+   --------------------------------------------------------------- */
+
+.site-nav {
+  background-color: color-mix(in srgb, var(--surface) 94%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+@supports not (background-color: color-mix(in srgb, red 50%, transparent)) {
+  .site-nav {
+    background-color: var(--surface);
+  }
+}
+
+.nav-panel {
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: 0fr;
+  border-top: 1px solid transparent;
+  transition: grid-template-rows 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-panel > div {
+  min-height: 0;
+}
+
+.nav-panel[data-open='true'] {
+  grid-template-rows: 1fr;
+  border-top-color: var(--border);
+}
+
+.nav-toggle-bar {
+  display: block;
+  height: 2px;
+  width: 1.25rem;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------------------------------------------------------------
+   Hero
+   --------------------------------------------------------------- */
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--scrim), 0.88) 0%,
+    rgba(var(--scrim), 0.72) 44%,
+    rgba(var(--scrim), 0.10) 100%
+  );
+}
+
+@media (max-width: 1023px) {
+  .hero-media::after {
+    background: linear-gradient(
+      180deg,
+      rgba(var(--scrim), 0.92) 0%,
+      rgba(var(--scrim), 0.82) 58%,
+      rgba(var(--scrim), 0.45) 100%
+    );
+  }
+}
+
+/* ---------------------------------------------------------------
+   Componentes
+   --------------------------------------------------------------- */
+
+/* Marco cuadrado listo para foto: hoy contiene iniciales, mañana un <img>
+   con las mismas dimensiones. Cambiar el contenido no altera el layout. */
+.attorney-photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+  flex: none;
+}
+
+.attorney-photo img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Placa bajo el logo: el logo es azul marino y dorado sobre transparente,
+   así que necesita un respaldo claro para conservar sus colores sobre el
+   fondo oscuro. En el tema claro queda como un tinte apenas perceptible. */
+.logo-plate {
+  display: inline-grid;
+  place-items: center;
+  background: var(--contrast);
+  border-radius: 0.125rem;
+}
+
+.whatsapp-panel {
+  box-shadow: 0 20px 55px rgba(37, 211, 102, 0.22);
+}
+
+.field {
+  min-height: 3rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: var(--text-muted);
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--brand-ink);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-ink) 18%, transparent);
+}
+
+.theme-switch {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.theme-switch span {
+  transform: translateX(0);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+html.dark-theme .theme-switch span {
+  background: var(--gold);
+  transform: translateX(1.55rem);
+}
+
+/* Contenido tipográfico de páginas legales */
+.legal-prose h2 {
+  margin-top: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.legal-prose p,
+.legal-prose li {
+  margin-top: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.legal-prose ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.legal-prose a {
+  color: var(--brand-ink);
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------
+   Foco de teclado
+   --------------------------------------------------------------- */
+
+/* :where() mantiene la especificidad en 0 para no pisar el anillo
+   propio de .field:focus. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--brand-ink);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------
+   Refinamientos del tema oscuro
+
+   Única regla que no deriva solo de tokens: sobre azul marino las
+   sombras no se perciben, así que el relieve de los paneles se logra
+   iluminando su filo superior. Se usa border-top-color y no un
+   box-shadow interior para no pisar la sombra de .shadow-business.
+   --------------------------------------------------------------- */
+
+html.dark-theme .border.surface,
+html.dark-theme .border.surface-raised,
+html.dark-theme .border.surface-glass {
+  /* #edf4ff al 22% */
+  border-top-color: rgba(237, 244, 255, 0.22);
+}
+
+html.dark-theme .hover-lift:hover {
+  border-top-color: var(--brand-ink);
+}
